@@ -37,3 +37,36 @@ Caso analise a necessidade de melhorias, sinta-se livre para implementar. (Ex: t
 ## Design criado no XD
 
 ![alt text](https://github.com/marcelochb/ies2-hiring-test/blob/master/design/design.png)
+
+
+## Mobile (React Native)
+
+### API Publica utilizada foi: [The Movie Database!](https://www.themoviedb.org/documentation/api)
+
+### Organização do projeto:
+  #### O projeto foi iniciado com template typescript
+  #### O pathern escolhido foi MVC (incluindo a pasta Services para aliviar o Controller)
+    A escolha do MVC foi com a intenção de proporcionar um codigo descritivo, organizado e facil manutenção. 
+    O Model ficou responsável por armazenar a modelagem por typescript. 
+    A View com o os arquivos JSX puros.
+    O Controller através de hooks fica responsável por toda manipulação dos dados, e utiliza a pasta Services para delegar pequenas tarefas.
+  
+### Estrutura das pastas:
+  #### src
+    #### assets - Imagens, icones e fonts;
+    #### components - Components comparilhados UI e de modulos;
+    #### config - Typescrypt e Reactotron;
+    #### database - Modelagem e api;
+    #### pages - Paginas e seus componentes;
+    #### routes - Rota de navegação;
+    #### store - Redux (config, reducer, actions, modelagem);
+    #### styles - Estilizações compartilhadas;
+    #### theme - Tema com paleta de cores, metricas e font sizes;
+    
+ 
+ ### Para testar o App
+  #### dentro da pasta mobile executar os comandos:
+    1 - yarn;
+    2 - dentro da pasta ios: pod install;
+    3 - dentro da pasta mobile: npx react-native run-ios ou run-android
+  
