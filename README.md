@@ -52,16 +52,16 @@ Caso analise a necessidade de melhorias, sinta-se livre para implementar. (Ex: t
     O Controller através de hooks fica responsável por toda manipulação dos dados, e utiliza a pasta Services para delegar pequenas tarefas.
   
 ### Estrutura das pastas:
- src
-   assets - Imagens, icones e fonts;
-   components - Components comparilhados UI e de modulos;
-   config - Typescrypt e Reactotron;
-   database - Modelagem e api;
-   pages - Paginas e seus componentes;
-   routes - Rota de navegação;
-   store - Redux (config, reducer, actions, modelagem);
-   styles - Estilizações compartilhadas;
-   theme - Tema com paleta de cores, metricas e font sizes;
+ 1 - src
+   1.1 - assets - Imagens, icones e fonts;
+   1.2 - components - Components comparilhados UI e de modulos;
+   1.3 - config - Typescrypt e Reactotron;
+   1.4 - database - Modelagem e api;
+   1.5 - pages - Paginas e seus componentes;
+   1.6 - routes - Rota de navegação;
+   1.7 - store - Redux (config, reducer, actions, modelagem);
+   1.8 - styles - Estilizações compartilhadas;
+   1.9 - theme - Tema com paleta de cores, metricas e font sizes;
     
  
  ### Para testar o App
