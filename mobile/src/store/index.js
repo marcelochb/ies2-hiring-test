@@ -1,6 +1,5 @@
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import thunk from 'redux-thunk';
 
 import createStore from './createStore';
 import persistReducers from './persistsReducers';
@@ -13,7 +12,7 @@ const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 
 const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 
-const middlewares = [sagaMiddleware, thunk];
+const middlewares = [sagaMiddleware];
 
 const store = createStore(persistReducers(rootReducer), middlewares);
 const persistor = persistStore(store);
