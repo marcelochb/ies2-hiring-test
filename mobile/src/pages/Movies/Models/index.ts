@@ -9,3 +9,11 @@ export type ModelOfAddMovieToCart = (params: ModelOfMovieParameters) => void;
 export type ModelOfCheckIfThereIsMovieInCart = (
   params: ModelOfMovieParameters,
 ) => boolean;
+
+type ModelOfFindMovieByTitleParamters = {
+  titleOfMovie: string;
+};
+
+export type ModelOfFindMovieByTitle = (
+  params: ModelOfFindMovieByTitleParamters,
+) => void;

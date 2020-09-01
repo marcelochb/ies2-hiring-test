@@ -1,3 +1,4 @@
 import * as Views from './Views';
 import * as Texts from './Texts';
-export { Views, Texts };
+import * as Inputs from './Inputs';
+export { Views, Texts, Inputs };

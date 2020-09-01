@@ -13,8 +13,9 @@ import { ModelOfCheckIfThereIsMovieInCart } from '../Models';
 
 export const useMoviesController = () => {
   const Cart = useSelector((state: GlobalState) => state.cart);
-  const { loading, movies } = useFetchDataService();
+  const { loading, movies, findMovieByTitle } = useFetchDataService();
   const { addMovieToCart } = useHandleMoviesService();
+  const [titleOfMovie, setTitleOfMovie] = useState('');
 
   const checkThereIsMovieInCart: ModelOfCheckIfThereIsMovieInCart = useCallback(
     ({ movie }) => {
@@ -26,14 +27,21 @@ export const useMoviesController = () => {
     [Cart],
   );
 
+  const onChangeTitleOfMovie = (title: string) => {
+    setTitleOfMovie(title);
+    findMovieByTitle({ titleOfMovie: title });
+  };
+
   return {
     getController: {
       movies,
       loading,
+      titleOfMovie,
     },
     handleController: {
       addMovieToCart,
       checkThereIsMovieInCart,
+      onChangeTitleOfMovie,
     },
   };
 };

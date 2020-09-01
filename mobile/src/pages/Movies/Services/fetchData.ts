@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import {
   ModelOfTableMovie,
   ModelOfMoviesResponseFromApi,
@@ -11,6 +11,7 @@ import { ptBR } from 'date-fns/locale';
 export const useFetchDataService = () => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState<ModelOfTableMovie[]>([]);
+  const [moviesFiltered, setMoviesFiltered] = useState<ModelOfTableMovie[]>([]);
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -21,11 +22,11 @@ export const useFetchDataService = () => {
             locale: ptBR,
           }),
         }));
-        setMovies(
-          formatedMovies.sort((current, next) =>
-            current.title > next.title ? 1 : -1,
-          ),
+        const sortedMovies = formatedMovies.sort((current, next) =>
+          current.title > next.title ? 1 : -1,
         );
+        setMovies(sortedMovies);
+        setMoviesFiltered(sortedMovies);
         setLoading(false);
       } catch (error) {
         setLoading(false);
@@ -38,5 +39,14 @@ export const useFetchDataService = () => {
     loadData();
   }, []);
 
-  return { loading, movies };
+  const findMovieByTitle = ({ titleOfMovie }: { titleOfMovie: string }) => {
+    const filtered = movies.filter(movie => movie.title.includes(titleOfMovie));
+    setMoviesFiltered(filtered);
+  };
+
+  return {
+    loading,
+    movies: moviesFiltered,
+    findMovieByTitle,
+  };
 };
