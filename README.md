@@ -51,10 +51,10 @@ Caso analise a necessidade de melhorias, sinta-se livre para implementar. (Ex: t
     A View com o os arquivos JSX puros.
     O Controller através de hooks fica responsável por toda manipulação dos dados, e utiliza a pasta Services para delegar pequenas tarefas.
   
-#### Estrutura das pastas:
- 1 - src;
-  1.1 - assets - Imagens, icones e fonts;
-  1.2 - components - Components comparilhados UI e de modulos;
+### Estrutura das pastas:
+ #### src;
+  1 assets - Imagens, icones e fonts;
+  2 components - Components comparilhados UI e de modulos;
   1.3 - config - Typescrypt e Reactotron;
   1.4 - database - Modelagem e api;
   1.5 - pages - Paginas e seus componentes;
