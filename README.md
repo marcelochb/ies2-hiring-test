@@ -36,4 +36,4 @@ Caso analise a necessidade de melhorias, sinta-se livre para implementar. (Ex: t
 
 ## Design criado no XD
 
-[alt text](https://github.com/marcelochb/ies2-hiring-test/blob/master/design/design.png)
+![alt text](https://github.com/marcelochb/ies2-hiring-test/blob/master/design/design.png)
